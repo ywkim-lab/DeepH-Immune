@@ -1,10 +1,20 @@
 # DeepH-Immune  
-**Hybrid Deep Learning Model for Identifying MHC Class II Immunogenic Epitopes Recognized by T Cell Receptors**
+**DeepH-Immune: A Hybrid Deep Learning Model for Identifying MHC Class II Immunogenic Peptides Recognized by T Cell Receptors**
 
 DeepH-Immune is a hybrid deep learning framework for predicting **MHC class II peptide immunogenicity** by explicitly modeling peptide–MHC interactions and integrating evolutionary information from protein language models.  
 This repository provides **Python Jupyter notebooks** for training, evaluation, and interpretation.
 
 ---
+## Workflow
+
+<img width="1085" height="388" alt="image" src="https://github.com/user-attachments/assets/f8dad11f-535f-45f1-ae71-a04640933993" />
+
+
+
+**Figure:** Overview of the DeepH-Immune architecture. 
+
+
+
 
 ## Overview
 Accurate identification of immunogenic peptide–MHC class II complexes is critical for cancer immunotherapy, vaccine development, and immune monitoring.  
@@ -122,12 +132,7 @@ For questions, issues, or collaboration inquiries, please contact:
 
 📧 youngwkim@ncc.re.kr
 
-## Workflow
 
-
-<img width="601" height="291" alt="image" src="https://github.com/user-attachments/assets/4243fd50-92ec-4523-aa59-29acbb9ec18a" />
-
-**Figure:** Overview of the DeepH-Immune architecture. 
 
 
 ---
