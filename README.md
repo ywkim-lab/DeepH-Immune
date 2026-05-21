@@ -137,7 +137,9 @@ For questions, issues, or collaboration inquiries, please contact:
 
 ---
 ## License
-This project is intended for academic and research use.  
 
+This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License. Under this license, users are permitted to share, copy, redistribute, and adapt the materials provided in this repository for non-commercial academic and research purposes, provided that appropriate credit is given to the original authors and the source repository.
+
+Commercial use of this software, datasets, models, or associated materials is strictly prohibited without prior written permission from the authors. If you use DeepH-Immune in your research or publications, please cite the corresponding article and acknowledge the original repository.
 
 
