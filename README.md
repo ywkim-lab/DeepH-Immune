@@ -130,7 +130,7 @@ This enables effective adaptation of large pretrained protein models while keepi
 ## Contact
 For questions, issues, or collaboration inquiries, please contact:
 
-📧 youngwkim@ncc.re.kr
+📧 youngwkim@ncc.re.kr, or jhabindra@jbnu.ac.kr
 
 
 
