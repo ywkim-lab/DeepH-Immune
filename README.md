@@ -22,7 +22,7 @@ DeepH-Immune integrates:
 
 - Sequence-level convolutional encoders  
 - Peptide–MHC **cross-attention** for residue-level interaction modeling  
-- **ESM-2.0** protein language model embeddings for evolutionary context  
+- **ESM-2** protein language model embeddings for evolutionary context  
 - Attention- and gradient-based interpretability  
 
 ## Model Interpretability
@@ -99,7 +99,7 @@ Each input sample must include:
 
 ## Environment Setup 2
 
-We also performed fine-tuning of **ESM-2.0 protein language models** for peptide immunogenicity prediction using **parameter-efficient fine-tuning (PEFT)** with **LoRA**.  
+We also performed fine-tuning of **ESM-2 protein language models** for peptide immunogenicity prediction using **parameter-efficient fine-tuning (PEFT)** with **LoRA**.  
 This enables effective adaptation of large pretrained protein models while keeping the number of trainable parameters small.
 
 ### Model
