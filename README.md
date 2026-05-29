@@ -1,5 +1,5 @@
 # DeepH-Immune  
-**Modeling Residue-Level Peptide–MHC Interaction Landscapes with Deep Learning for MHC Class II Immunogenicity Prediction**
+**MHC-II immunogenicity prediction via residue-level peptide–MHC interaction learning and protein language models**
 
 DeepH-Immune is a hybrid deep learning framework for predicting **MHC class II peptide immunogenicity** by explicitly modeling peptide–MHC interactions and integrating evolutionary information from protein language models.  
 This repository provides **Python Jupyter notebooks** for training, evaluation, and interpretation.
