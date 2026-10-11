@@ -4,9 +4,8 @@
 
 DeepH-Immune is a deep learning framework for predicting peptide–MHC class II (pMHC-II) immunogenicity. The framework combines compact convolutional transformer (CCT) sequence encoders, peptide-to-MHC cross-attention, candidate binding-core modeling, and frozen ESM-2 protein language model features.
 
-[**Model illustration (PDF)**](https://github.com/user-attachments/files/33303051/Figure_2c.pdf)
 
-> **Repository data notice:** The large frozen ESM-2 feature arrays for the **7,092-sample training set** (`ESM2_mhc_training_Immuscope_7092` and `ESM2_peptide_training_Immuscope_7092`) are **not hosted in this repository** because of their file sizes. To retrain the model, users must generate the corresponding features locally. The pretrained five-fold Keras checkpoints are provided separately under `models/pretrained/`. External validation without regeneration is possible **only when the required external-validation input files and frozen ESM-2 features are present**.
+
 
 ## Highlights
 
@@ -175,6 +174,8 @@ DeepH-Immune predicts functional immunogenicity from peptide–MHC-II sequence i
 - Do not reorder input CSV rows without regenerating the aligned embedding arrays.
 - Check both training/test separation and overlap with external-validation observations.
 - Use the provided checkpoints for model evaluation; retraining requires generating the missing training features.
+
+  > **Repository data notice:** The large frozen ESM-2 feature arrays for the **7,092-sample training set** (`ESM2_mhc_training_Immuscope_7092` and `ESM2_peptide_training_Immuscope_7092`) are **not hosted in this repository** because of their file sizes. To retrain the model, users must generate the corresponding features locally. The pretrained five-fold Keras checkpoints are provided separately under `models/pretrained/`. External validation without regeneration is possible **only when the required external-validation input files and frozen ESM-2 features are present**.
 
 ## Citation
 
