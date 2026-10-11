@@ -1,21 +1,6 @@
 """DeepH-Immune V2 shortcut-resistant model.
 
-Canonical GitHub implementation used to rebuild the architecture before loading
-the supplied fold checkpoints. The layer names and tensor shapes are intentionally
-kept identical to the training implementation.
 
-Serializable shortcut-resistant DeepH-Immune .
-
-This version is computationally equivalent to the shortcut-resistant model,
-but replaces anonymous Keras Lambda layers with explicit serializable layers.
-
-Why:
-Keras 3 may fail to reload .keras files containing Lambda layers whose
-output shape cannot be inferred during deserialization.
-
-Existing trained .keras models DO NOT need to be retrained:
-for external validation, rebuild this architecture and call model.load_weights()
-on each existing .keras checkpoint.
 """
 
 from __future__ import annotations
