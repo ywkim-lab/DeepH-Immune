@@ -136,13 +136,6 @@ Training results may vary with software versions, random seeds, hardware, and da
 
 DeepH-Immune predicts functional immunogenicity from peptide–MHC-II sequence information and protein-language-model features; predictions do not directly measure T-cell receptor binding or guarantee an experimental T-cell response. Attention visualizations represent **learned model dependencies**, not proof of physical residue contacts or causal mechanisms. Because training uses immunogenicity rather than direct binding-affinity labels, the resulting motifs should be described as **model-inferred, immunogenicity-associated core motifs** unless independently validated.
 
-## Reproducibility notes
-
-- Retain allele, peptide, label, and sample-ID mappings during preprocessing.
-- Do not reorder input CSV rows without regenerating the aligned embedding arrays.
-- Check both training/test separation and overlap with external-validation observations.
-- Use the provided checkpoints for model evaluation; retraining requires generating the missing training features.
-
 
 ## Citation
 
