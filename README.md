@@ -1,6 +1,7 @@
 # DeepH-Immune
 
-**Reproducible MHC class II peptide immunogenicity modelling with a shortcut-resistant CCT/cross-attention branch and frozen ESM-2 interaction features.**
+**MHC-II immunogenicity prediction via residue-level peptide–MHC interaction learning and protein language models[Figure_2c.pdf](https://github.com/user-attachments/files/33303051/Figure_2c.pdf)
+.**
 
 
 
@@ -35,7 +36,7 @@ outputs/external_validation/
     └── PR_ensemble.png
 ```
 
-The supplied checkpoints were saved with Keras 3.12.0 and the executed validation notebook used TensorFlow 2.20.0. The supplied executed experiment reported an ensemble **AUROC ≈ 0.6642** and **AUPRC ≈ 0.7640** on external2. See [`docs/REFERENCE_RESULTS.md`](docs/REFERENCE_RESULTS.md) for fold-wise values and fixed-threshold metrics.
+The supplied checkpoints were saved with Keras 3.12.0 and the executed validation notebook used TensorFlow 2.20.0. 
 
 ## Repository layout
 
@@ -43,7 +44,7 @@ The supplied checkpoints were saved with Keras 3.12.0 and the executed validatio
 DeepH-Immune/
 ├── data/
 │   ├── training/                  # 7,092 CSV + frozen training ESM-2 arrays
-│   ├── external/                  # 154 CSV + frozen external ESM-2 arrays
+│   ├── external/                  # 309 CSV + frozen external ESM-2 arrays
 │   ├── metadata.json
 │   └── README.md
 ├── models/
@@ -106,27 +107,7 @@ The pre-trained checkpoints are included. To retrain from scratch using the supp
 python training/train_cv.py --epochs 80 --batch-size 64
 ```
 
-Defaults reproduce the experiment configuration:
-
-- 5 folds;
-- seed 42;
-- `stratified_length` splitting;
-- early stopping on validation AUPRC (patience 12);
-- ReduceLROnPlateau on validation AUPRC;
-- length-label sample weighting;
-- allele-label weighting (approximately neutral after exact within-allele balancing, but retained for fidelity to the training workflow).
-
-Retraining writes to `outputs/training_reproduction/` and does not overwrite `models/pretrained/`.
-
-## Publication-quality Branch-I analysis
-
-Open:
-
-```bash
-jupyter lab notebooks/03_BranchI_Interpretability.ipynb
-```
-
-<!-- The notebook uses **out-of-fold interpretation**: each training observation is interpreted by the fold model for which that observation was held out. 
+ 
 
 
 Attention is treated as a learned dependency, not as proof of physical contact or causality. Because the model is trained on immunogenicity labels rather than direct binding-affinity labels, discovered motifs should be described as **model-inferred / immunogenicity-associated core motifs** unless independently validated.
@@ -140,33 +121,6 @@ conda env create -f environment_esm2.yml
 conda activate deeph-immune-esm2
 ```
 
-See [`esm2/README.md`](esm2/README.md). ESM-2 receives true peptide sequences and `MHC_ungapped`; the 281-column alignment gaps are never supplied to ESM-2.
 
-## Integrity and reproducibility
 
-Run:
 
-```bash
-python scripts/verify_repository.py
-```
-
-This verifies dataset counts, class balance, MHC alignment length, feature shapes, CSV↔ESM sample-ID order, and all five Keras checkpoint archives. SHA-256 hashes for distributed files are recorded in `MANIFEST.sha256`.
-
-## Notes for GitHub
-
-All distributed individual files are below GitHub's 100 MB per-file hard limit. The frozen `.npy` arrays and `.keras` checkpoints are intentionally tracked so a clone can run immediately. If the repository grows substantially later, moving large binary assets to a GitHub Release or Git LFS would be reasonable.
-
-## Documentation
-
-- [`docs/DATA_PROVENANCE.md`](docs/DATA_PROVENANCE.md)
-- [`docs/MODEL_ARCHITECTURE.md`](docs/MODEL_ARCHITECTURE.md)
-- [`docs/REFERENCE_RESULTS.md`](docs/REFERENCE_RESULTS.md)
-- [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md)
-- [`docs/ORIGINAL_FILE_MAP.md`](docs/ORIGINAL_FILE_MAP.md)
-- [`docs/Task2_Experiment_Record.md`](docs/Task2_Experiment_Record.md)
-
----
-
-**Experiment:** DeepH-Immune V2 shortcut-resistant, ImmuScope allele-balanced 7,092 → external2 154  
-**Primary model input:** peptide sequence + aligned MHC-II sequence + frozen ESM-2 peptide/MHC features  
-**Cross-validation:** 5-fold
