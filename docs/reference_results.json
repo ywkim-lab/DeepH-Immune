@@ -1,0 +1,51 @@
+{
+  "external2_n": 154,
+  "positive": 98,
+  "negative": 56,
+  "folds": [
+    {
+      "fold": 1,
+      "AUROC": 0.693149,
+      "AUPRC": 0.790682
+    },
+    {
+      "fold": 2,
+      "AUROC": 0.635569,
+      "AUPRC": 0.748157
+    },
+    {
+      "fold": 3,
+      "AUROC": 0.594206,
+      "AUPRC": 0.706601
+    },
+    {
+      "fold": 4,
+      "AUROC": 0.614067,
+      "AUPRC": 0.729387
+    },
+    {
+      "fold": 5,
+      "AUROC": 0.692238,
+      "AUPRC": 0.806648
+    }
+  ],
+  "ensemble": {
+    "AUROC": 0.664176,
+    "AUPRC": 0.763984,
+    "AUPRC_baseline": 0.636364
+  },
+  "threshold_0.5": {
+    "TP": 60,
+    "TN": 37,
+    "FP": 19,
+    "FN": 38,
+    "accuracy": 0.6299,
+    "sensitivity": 0.6122,
+    "specificity": 0.6607,
+    "balanced_accuracy": 0.6365,
+    "MCC": 0.2627,
+    "precision": 0.7595,
+    "F1": 0.678,
+    "Brier": 0.2452
+  }
+}
