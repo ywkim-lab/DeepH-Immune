@@ -1,0 +1,29 @@
+{
+  "experiment": "ImmuScope allele-balanced Task 2",
+  "training": {
+    "n": 7092,
+    "positive": 3546,
+    "negative": 3546,
+    "mhc_alleles": 46,
+    "peptide_length_range": [
+      12,
+      21
+    ]
+  },
+  "external2": {
+    "n": 154,
+    "positive": 98,
+    "negative": 56,
+    "mhc_sequence_alleles": 14,
+    "peptide_length_range": [
+      12,
+      21
+    ]
+  },
+  "esm2_model": "facebook/esm2_t33_650M_UR50D",
+  "esm_embedding_dim": 1280,
+  "peptide_max_length": 25,
+  "mhc_aligned_length": 281,
+  "folds": 5,
+  "seed": 42
+}
