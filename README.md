@@ -41,29 +41,10 @@ pip install -e .
 
 ## External validation
 
-The pretrained checkpoints can be used for inference **without retraining**. You do not need to download the ESM-2 model if compatible, precomputed **external-validation** embeddings are available locally.
-
-Before running validation, confirm the presence of:
-
-1. The external-validation CSV and corresponding ESM-2 peptide and MHC feature arrays.
-2. All required pretrained checkpoints under `models/pretrained/`.
-3. Matching row order and identifiers between the CSV and frozen features.
 
 ```bash
 python scripts/verify_repository.py
 python external_validation/run_external_validation.py
-```
-
-The evaluation workflow writes outputs to `outputs/external_validation/`, including prediction tables, metrics, and ROC/precision–recall figures. Depending on the inputs and script version, output filenames may include:
-
-```text
-outputs/external_validation/
-├── external2_154_predictions.csv
-├── per_fold_and_ensemble_metrics.csv
-├── summary.json
-└── figures/
-    ├── ROC_ensemble.png
-    └── PR_ensemble.png
 ```
 
 **Note:** The evaluation script cannot run directly if its expected external ESM-2 arrays are also missing. In that case, regenerate those features using the same encoder and preprocessing procedure before validation.
@@ -116,13 +97,6 @@ DeepH-Immune/
 
 ### Branch I — residue-level peptide–MHC-II interactions
 
-The sequence branch uses:
-
-- A **peptide CCT encoder** with a 64-dimensional latent representation and two transformer blocks.
-- An **MHC-II CCT encoder** with a 64-dimensional latent representation and one transformer block.
-- **Four-head peptide → MHC cross-attention**, using peptide queries and MHC keys/values.
-- Cross-attention pooling, learned candidate 9-mer core pooling, and peptide pooling.
-
 The shortcut-resistant configuration does not pass an independent standalone `mhc_pool` feature directly to the classifier.
 
 ### Branch II — frozen ESM-2 representations
@@ -135,7 +109,7 @@ The sequence and ESM-2 interaction features are combined by **gated fusion** and
 
 ## Retraining and ESM-2 feature generation
 
-**The original training ESM-2 feature arrays are not distributed with this repository.** In particular, the following generated feature files must be recreated before retraining:
+**The original training ESM-2 feature arrays are not distributed with this repository because of size.** In particular, the following generated feature files must be recreated before retraining:
 
 - `ESM2_mhc_training_Immuscope_7092`
 - `ESM2_peptide_training_Immuscope_7092`
@@ -175,7 +149,6 @@ DeepH-Immune predicts functional immunogenicity from peptide–MHC-II sequence i
 - Check both training/test separation and overlap with external-validation observations.
 - Use the provided checkpoints for model evaluation; retraining requires generating the missing training features.
 
-  > **Repository data notice:** The large frozen ESM-2 feature arrays for the **7,092-sample training set** (`ESM2_mhc_training_Immuscope_7092` and `ESM2_peptide_training_Immuscope_7092`) are **not hosted in this repository** because of their file sizes. To retrain the model, users must generate the corresponding features locally. The pretrained five-fold Keras checkpoints are provided separately under `models/pretrained/`. External validation without regeneration is possible **only when the required external-validation input files and frozen ESM-2 features are present**.
 
 ## Citation
 
