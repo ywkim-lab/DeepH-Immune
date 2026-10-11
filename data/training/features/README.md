@@ -1,1 +1,1 @@
-
+Due to the large file sizes of the ESM-2-generated features (ESM2_mhc_training_Immuscope_7092 and ESM2_peptide_training_Immuscope_7092), we are unable to include these files in the GitHub repository. Users who wish to retrain the DeepH-Immune model must generate the corresponding ESM-2 features themselves.
