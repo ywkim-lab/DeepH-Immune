@@ -4,14 +4,6 @@
 
 
 
-## Experiment packaged here
-
-| Dataset | Total | Positive | Negative | MHC sequence alleles |
-|---|---:|---:|---:|---:|
-| Allele-balanced training | **7,092** | **3,546** | **3,546** | **46** |
-| Collaborator-provided external2/test | **154** | **98** | **56** | **14** |
-
-Peptide lengths are 12–21 aa in these final files. Peptides are tokenized to a maximum length of 25; the aligned MHC-II sequence input is 281 positions. Frozen ESM-2 embeddings are 1280-dimensional.
 
 ## Clone → validate immediately
 
