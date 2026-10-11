@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deeph-immune"
+version = "2.0.0"
+description = "Shortcut-resistant MHC-II peptide immunogenicity model with CCT, cross-attention and frozen ESM-2 features"
+requires-python = ">=3.10,<3.13"
+authors = [{name = "Jhabindra Khanal"}]
+readme = "README.md"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

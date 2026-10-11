@@ -1,0 +1,74 @@
+DeepH-Immune/
+├── data
+│   ├── external
+│   │   ├── features
+│   │   │   ├── ESM2_mhc_Immuscope_external2_154.npy
+│   │   │   ├── ESM2_peptide_Immuscope_external2_154.npy
+│   │   │   ├── Labels_Immuscope_external2_154.npy
+│   │   │   └── Sample_ids_Immuscope_external2_154.npy
+│   │   └── ImmuScope_external2_154_trainable_fullMHC281.csv
+│   ├── training
+│   │   ├── features
+│   │   │   ├── ESM2_mhc_training_Immuscope_7092.npy
+│   │   │   ├── ESM2_peptide_training_Immuscope_7092.npy
+│   │   │   ├── Labels_training_Immuscope_7092.npy
+│   │   │   └── Sample_ids_training_Immuscope_7092.npy
+│   │   └── ImmuScope_7092_trainable_fullMHC281_allelebalanced.csv
+│   ├── metadata.json
+│   └── README.md
+├── docs
+│   ├── DATA_PROVENANCE.md
+│   ├── MODEL_ARCHITECTURE.md
+│   ├── ORIGINAL_FILE_MAP.md
+│   ├── reference_results.json
+│   ├── REFERENCE_RESULTS.md
+│   ├── REPRODUCIBILITY.md
+│   └── Task2_Experiment_Record.md
+├── esm2
+│   ├── extract_esm2.py
+│   └── README.md
+├── external_validation
+│   ├── README.md
+│   └── run_external_validation.py
+├── models
+│   ├── pretrained
+│   │   ├── DeepH_Immune_Immuscope_7092_shortcut_resistant_fold1.keras
+│   │   ├── DeepH_Immune_Immuscope_7092_shortcut_resistant_fold2.keras
+│   │   ├── DeepH_Immune_Immuscope_7092_shortcut_resistant_fold3.keras
+│   │   ├── DeepH_Immune_Immuscope_7092_shortcut_resistant_fold4.keras
+│   │   └── DeepH_Immune_Immuscope_7092_shortcut_resistant_fold5.keras
+│   └── README.md
+├── notebooks
+│   ├── 01_Training_Reproduction.ipynb
+│   ├── 02_External_Validation.ipynb
+│   └── 03_BranchI_Interpretability.ipynb
+├── outputs
+│   ├── .gitkeep
+│   └── README.md
+├── scripts
+│   └── verify_repository.py
+├── src
+│   └── deeph_immune
+│       ├── __init__.py
+│       ├── io.py
+│       ├── metrics.py
+│       ├── model.py
+│       ├── paths.py
+│       └── training_utils.py
+├── tests
+│   └── test_repository_data.py
+├── training
+│   ├── README.md
+│   └── train_cv.py
+├── .gitattributes
+├── .gitignore
+├── CHECKLIST_BEFORE_GITHUB.md
+├── environment_esm2.yml
+├── environment_tensorflow.yml
+├── Makefile
+├── MANIFEST.sha256
+├── pyproject.toml
+├── README.md
+├── REPOSITORY_TREE.txt
+├── requirements_esm2.txt
+└── requirements_tensorflow.txt

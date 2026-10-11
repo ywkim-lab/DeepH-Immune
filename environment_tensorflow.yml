@@ -1,0 +1,9 @@
+name: deeph-immune-tf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements_tensorflow.txt
+      - -e .
