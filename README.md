@@ -47,7 +47,6 @@ python scripts/verify_repository.py
 python external_validation/run_external_validation.py
 ```
 
-**Note:** The evaluation script cannot run directly if its expected external ESM-2 arrays are also missing. In that case, regenerate those features using the same encoder and preprocessing procedure before validation.
 
 ## Repository structure
 
@@ -97,15 +96,10 @@ DeepH-Immune/
 
 ### Branch I — residue-level peptide–MHC-II interactions
 
-The shortcut-resistant configuration does not pass an independent standalone `mhc_pool` feature directly to the classifier.
-
 ### Branch II — frozen ESM-2 representations
 
-This branch uses [`facebook/esm2_t33_650M_UR50D`](https://huggingface.co/facebook/esm2_t33_650M_UR50D). The peptide and ungapped MHC-II sequences are represented by residue-mean-pooled, **1,280-dimensional** frozen embeddings. Learned bottlenecks and L2 normalization support interaction-oriented fusion of peptide features, peptide × MHC products, and absolute peptide–MHC feature differences. A standalone MHC ESM vector is not directly concatenated to the final classifier.
+This branch uses [`facebook/esm2_t33_650M_UR50D`](https://huggingface.co/facebook/esm2_t33_650M_UR50D). The peptide and ungapped MHC-II sequences are represented by residue-mean-pooled, **1,280-dimensional** frozen embeddings.
 
-### Fusion and prediction
-
-The sequence and ESM-2 interaction features are combined by **gated fusion** and classified using dense layers of **128 → 64 → sigmoid**, yielding a predicted immunogenicity score.
 
 ## Retraining and ESM-2 feature generation
 
