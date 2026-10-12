@@ -131,7 +131,7 @@ DeepH-Immune predicts functional immunogenicity from peptide–MHC-II sequence i
 
 ## Citation
 
-If you use this repository in published research, please cite the corresponding DeepH-Immune manuscript. Add a complete bibliographic reference and DOI here when available.
+If you use this repository in published research, please cite the corresponding DeepH-Immune manuscript.
 
 ## License and contact
 
