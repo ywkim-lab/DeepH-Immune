@@ -101,16 +101,8 @@ DeepH-Immune/
 This branch uses [`facebook/esm2_t33_650M_UR50D`](https://huggingface.co/facebook/esm2_t33_650M_UR50D). The peptide and ungapped MHC-II sequences are represented by residue-mean-pooled, **1,280-dimensional** frozen embeddings.
 
 
-## Retraining and ESM-2 feature generation
 
-**The original training ESM-2 feature arrays are not distributed with this repository because of size.** In particular, the following generated feature files must be recreated before retraining:
-
-- `ESM2_mhc_training_Immuscope_7092`
-- `ESM2_peptide_training_Immuscope_7092`
-
-Their exact filename extensions and output locations should match the paths expected by the training pipeline. Preserve the training CSV's original sequence ordering and sample IDs: **the embedding-array rows must align exactly with the corresponding CSV rows**.
-
-Create a separate environment for ESM-2 extraction:
+For new data, create a separate environment for ESM-2 extraction:
 
 ```bash
 conda env create -f environment_esm2.yml
