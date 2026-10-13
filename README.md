@@ -110,19 +110,6 @@ conda activate deeph-immune-esm2
 python esm2/extract_esm2.py --help
 ```
 
-Check the extractor's arguments and input/output paths in `esm2/extract_esm2.py`, then generate both peptide and MHC arrays. Verify their alignment before training:
-
-```bash
-python scripts/verify_repository.py
-```
-
-After the required training features have been generated and placed at the expected paths, run:
-
-```bash
-python training/train_cv.py --epochs 80 --batch-size 64
-```
-
-Training results may vary with software versions, random seeds, hardware, and data preprocessing.
 
 ## Interpretation and limitations
 
